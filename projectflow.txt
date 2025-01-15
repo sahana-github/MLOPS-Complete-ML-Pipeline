@@ -8,6 +8,8 @@
    Do "pip install -r requirements.txt"
 4. Do a "pip list" on terminal to make sure you have local packages installed.
 
+
+
 ----------------------------------------------- MongoDB Setup -----------------------------------------------
 5. Sign up to MongoDB Atlas and create a new project by just providing it a name then next next create.
 6. From "Create a cluster" screen, hit "create", Select M0 service keeping other services as default, hit "create deployment"
