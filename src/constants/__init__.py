@@ -73,3 +73,8 @@ MODEL_PUSHER_S3_KEY = "model-registry"
 
 APP_HOST = "0.0.0.0"
 APP_PORT = 5000
+
+
+MINIO_ENDPOINT = "minio.example.com:9000"
+MINIO_ACCESS_KEY = "mykey"
+MINIO_SECRET_KEY = "mypswd"

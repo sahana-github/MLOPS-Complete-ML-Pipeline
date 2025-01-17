@@ -58,3 +58,50 @@
 20. Now work on the "Data Validation" component the way we did in step 17 for Data Ingestion. (Workflow mentioned below)
 21. Now work on the "Data Transformation" component the way we did in above step. (add estimator.py to entity folder)
 22. Now work on the "Model Trainer" component the way we did in above step. (add class to estimator.py in entity folder)
+
+
+------------------------------ Object Storage with MinIO Setup ------------------------------
+23. Setup MinIO instead of AWS services:
+* Install Docker Compose if not already installed.
+* Create a docker-compose.yml file for MinIO:
+yaml
+      version: '3.7'
+      services:
+        minio:
+          image: minio/minio
+          container_name: minio
+          ports:
+            - "9000:9000"
+            - "9001:9001"
+          environment:
+            MINIO_ROOT_USER: "minioadmin"
+            MINIO_ROOT_PASSWORD: "minioadmin"
+          command: server /data --console-address ":9001"
+          volumes:
+            - minio_data:/data
+      volumes:
+        minio_data:
+      
+* Start MinIO:
+      docker-compose up -d
+     
+* Access the MinIO web console at http://localhost:9001 and log in with credentials (minioadmin/minioadmin).
+* Create a bucket for storing model artifacts, e.g., my-model-mlopsproj.
+
+Update code to interact with MinIO instead of AWS S3:
+
+Add MinIO configurations to constants.init.py:
+
+MINIO_ENDPOINT: str = "http://localhost:9000"
+MINIO_ACCESS_KEY: str = "minioadmin"
+MINIO_SECRET_KEY: str = "minioadmin"
+MODEL_BUCKET_NAME: str = my-model-mlopsproj"
+
+* Add code to src.configuration.minio_connection.py to establish connections and manage interactions with MinIO.
+
+* Inside "src.minio_storage," add functions for pushing and pulling models from MinIO.
+
+24. Now we will start our work on "Model Evaluation" and "Model Pusher" component.
+
+25. Create the code structure of "Prediction Pipeline" and setup your app.py
+26. Add "static" and "template" dir to the project.
