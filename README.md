@@ -105,33 +105,13 @@ Step 15: Static and Template Directory
 
     Add static and template directories for web UI.
 
-🔄 CI/CD Setup with Docker, GitHub Actions, and AWS
-Step 16: Docker and GitHub Actions
 
-    Create Dockerfile and .dockerignore.
-    Set up GitHub Actions with AWS authentication by creating secrets in GitHub for:
-        AWS_ACCESS_KEY_ID
-        AWS_SECRET_ACCESS_KEY
-        AWS_DEFAULT_REGION
-        ECR_REPO
-
-Step 17: AWS EC2 and ECR
-
-    Set up an EC2 instance for deployment.
-    Install Docker on the EC2 machine.
-    Connect EC2 as a self-hosted runner on GitHub.
-
-Step 18: Final Steps
-
-    Open the 5080 port on the EC2 instance.
-    Access the deployed app by visiting http://<public_ip>:5080.
 
 🎯 Project Workflow Summary
 
     Data Ingestion ➔ Data Validation ➔ Data Transformation
     Model Training ➔ Model Evaluation ➔ Model Deployment
-    CI/CD Automation with GitHub Actions, Docker, AWS EC2, and ECR
+    
 
 
-
-This README provides a structured walkthrough of the MLOps project, showcasing the end-to-end pipeline, cloud integration, CI/CD setup, and robust data handling capabilities.
+This README provides a structured walkthrough of the MLOps project, showcasing the end-to-end pipeline, cloud integration.
